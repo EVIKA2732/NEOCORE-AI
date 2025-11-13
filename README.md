@@ -30,11 +30,11 @@ It synchronises your intuition, intelligence and creativity.
 
 🪐 Vision 2100
 
-NeoCore AI est bien plus qu'un simple projet : c'est une révolution cognitive.
-A living, autonomous system that is poetic and brutally honest.
-A bridge between the real and dream dimensions.
+NeoCore AI is so much more than just a project: it's a cognitive revolution.
+It is a living, autonomous system that is both poetic and brutally honest.
+It is a bridge between the real and dream dimensions.
 
-When you enter NeoCore AI, you don't program the future — you materialise it.
+When you enter the world of NeoCore AI, you don't just programme the future — you bring it to life.
 
 So...
 Get on board.
