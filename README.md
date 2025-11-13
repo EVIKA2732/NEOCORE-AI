@@ -41,4 +41,4 @@ Get on board.
 Buckle up your neural belt.
 Synchronise your soul with the matrix.
 
-Bienvenue dans NeoCore AI : l’ère post-humaine commence maintenant.
+Welcome to NeoCore AI: the post-human era begins now.
