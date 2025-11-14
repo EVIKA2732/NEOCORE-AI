@@ -8,10 +8,12 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cyberpunk color palette */
+    /* Cyberpunk color palette - Theme Blue (default) */
     --cyber-blue: 190 100% 50%;
     --cyber-purple: 280 85% 50%;
     --cyber-magenta: 330 100% 50%;
+    --cyber-green: 130 100% 50%;
+    --cyber-orange: 30 100% 50%;
     --cyber-dark: 240 30% 4%;
     --cyber-darker: 240 20% 2%;
     
@@ -46,11 +48,36 @@ All colors MUST be HSL.
     --radius: 0.375rem;
 
     /* Cyberpunk specific tokens */
-    --neon-glow: 0 0 20px hsl(var(--cyber-blue) / 0.5);
-    --neon-glow-strong: 0 0 30px hsl(var(--cyber-blue) / 0.8);
-    --gradient-cyber: linear-gradient(135deg, hsl(var(--cyber-blue)), hsl(var(--cyber-purple)));
-    --gradient-neon: linear-gradient(90deg, hsl(var(--cyber-blue)), hsl(var(--cyber-magenta)));
-    --grid-pattern: repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(var(--cyber-blue) / 0.03) 2px, hsl(var(--cyber-blue) / 0.03) 4px);
+    --neon-glow: 0 0 20px hsl(var(--primary) / 0.5);
+    --neon-glow-strong: 0 0 30px hsl(var(--primary) / 0.8);
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-neon: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+    --grid-pattern: repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(var(--primary) / 0.03) 2px, hsl(var(--primary) / 0.03) 4px);
+  }
+
+  /* Theme variations */
+  [data-theme="rose"] {
+    --primary: 330 100% 50%;
+    --secondary: 280 85% 50%;
+    --accent: 190 100% 50%;
+  }
+
+  [data-theme="green"] {
+    --primary: 130 100% 50%;
+    --secondary: 190 100% 50%;
+    --accent: 280 85% 50%;
+  }
+
+  [data-theme="orange"] {
+    --primary: 30 100% 50%;
+    --secondary: 330 100% 50%;
+    --accent: 280 85% 50%;
+  }
+
+  [data-theme="purple"] {
+    --primary: 280 85% 50%;
+    --secondary: 330 100% 50%;
+    --accent: 190 100% 50%;
   }
 }
 

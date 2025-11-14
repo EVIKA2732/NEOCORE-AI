@@ -1,9 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { CyberCard } from "@/components/CyberCard";
-import { Terminal as TerminalIcon, Keyboard } from "lucide-react";
+import { CyberButton } from "@/components/CyberButton";
+import { Terminal as TerminalIcon, Keyboard, Palette } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const Terminal = () => {
+  const { theme, setTheme } = useTheme();
   const [output, setOutput] = useState<string[]>([
     "NeoCore Terminal v2110.0",
     "Initialisation du système neuronal...",
@@ -12,6 +17,7 @@ const Terminal = () => {
     "Tapez 'help' pour la liste des commandes."
   ]);
   const [input, setInput] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
   const outputRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,59 +26,116 @@ const Terminal = () => {
     }
   }, [output]);
 
-  const commands: Record<string, string[]> = {
-    help: [
-      "Commandes disponibles:",
-      "  help     - Affiche cette aide",
-      "  status   - État du système",
-      "  scan     - Scan neuronal",
-      "  clear    - Efface l'écran",
-      "  matrix   - Mode Matrix",
-      "  exit     - Ferme le terminal"
-    ],
-    status: [
-      "═══ ÉTAT DU SYSTÈME ═══",
-      "CPU: Processeur quantique OK",
-      "RAM: 2048 TB disponible",
-      "Réseau: Connexion neurale active",
-      "Sécurité: Pare-feu quantique activé"
-    ],
-    scan: [
-      "Scan neuronal en cours...",
-      "████████████████████ 100%",
-      "Aucune menace détectée.",
-      "Système sécurisé."
-    ],
-    matrix: [
-      "01001101 01100001 01110100 01110010 01101001 01111000",
-      "Wake up, Neo...",
-      "The Matrix has you...",
-      "Follow the white rabbit."
-    ],
-    clear: [],
-    exit: ["Terminal fermé. Au revoir."]
+  const handlePrediction = async (question: string) => {
+    setIsProcessing(true);
+    const newOutput = [...output, `> predictions ${question}`, "Consultation de l'IA quantique..."];
+    setOutput(newOutput);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('ai-chat', {
+        body: { 
+          messages: [
+            { role: "user", content: `En tant qu'IA futuriste de l'an 2110, fais une prédiction sur: ${question}. Réponds de manière courte et mystique.` }
+          ] 
+        }
+      });
+
+      if (error) throw error;
+
+      if (data?.generatedText) {
+        setOutput(prev => [...prev, "", data.generatedText, ""]);
+      }
+    } catch (error) {
+      setOutput(prev => [...prev, "ERREUR: Connexion IA impossible", ""]);
+      toast.error("Erreur de prédiction");
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
-  const handleCommand = (cmd: string) => {
-    const trimmedCmd = cmd.trim().toLowerCase();
+  const handleCommand = async (cmd: string) => {
+    const parts = cmd.trim().split(' ');
+    const command = parts[0].toLowerCase();
+    const args = parts.slice(1).join(' ');
+    
     const newOutput = [...output, `> ${cmd}`];
 
-    if (trimmedCmd === "clear") {
+    if (command === "clear") {
       setOutput([]);
       return;
     }
 
-    if (commands[trimmedCmd]) {
-      newOutput.push(...commands[trimmedCmd]);
-    } else if (trimmedCmd === "") {
-      // Do nothing for empty command
+    if (command === "note" && args) {
+      const notes = JSON.parse(localStorage.getItem("neocore-notes") || "");
+      localStorage.setItem("neocore-notes", notes + "\n" + args);
+      newOutput.push("Note ajoutée au système");
+    } else if (command === "mission" && args) {
+      const missions = JSON.parse(localStorage.getItem("neocore-missions") || "[]");
+      missions.push({ title: args, date: new Date().toISOString() });
+      localStorage.setItem("neocore-missions", JSON.stringify(missions));
+      newOutput.push(`Mission "${args}" enregistrée`);
+    } else if (command === "predictions" && args) {
+      setOutput(newOutput);
+      await handlePrediction(args);
+      return;
+    } else if (command === "theme" && args) {
+      const validThemes = ['blue', 'rose', 'green', 'orange', 'purple'];
+      if (validThemes.includes(args.toLowerCase())) {
+        setTheme(args.toLowerCase() as any);
+        newOutput.push(`Thème changé en ${args}`);
+        toast.success(`Thème ${args} activé`, { className: "neon-glow" });
+      } else {
+        newOutput.push(`Thème invalide. Disponibles: ${validThemes.join(', ')}`);
+      }
+    } else if (command === "help") {
+      newOutput.push(
+        "Commandes disponibles:",
+        "  help                    - Affiche cette aide",
+        "  status                  - État du système",
+        "  scan                    - Scan neuronal",
+        "  note <texte>            - Ajoute une note",
+        "  mission <titre>         - Ajoute une mission",
+        "  predictions <question>  - Prédiction IA",
+        "  theme <couleur>         - Change le thème (blue/rose/green/orange/purple)",
+        "  clear                   - Efface l'écran",
+        "  matrix                  - Mode Matrix",
+        "  exit                    - Ferme le terminal"
+      );
+    } else if (command === "status") {
+      newOutput.push(
+        "═══ ÉTAT DU SYSTÈME ═══",
+        "CPU: Processeur quantique OK",
+        "RAM: 2048 TB disponible",
+        "Réseau: Connexion neurale active",
+        "Sécurité: Pare-feu quantique activé",
+        `Thème actuel: ${theme}`
+      );
+    } else if (command === "scan") {
+      newOutput.push(
+        "Scan neuronal en cours...",
+        "████████████████████ 100%",
+        "Aucune menace détectée.",
+        "Système sécurisé."
+      );
+    } else if (command === "matrix") {
+      newOutput.push(
+        "01001101 01100001 01110100 01110010 01101001 01111000",
+        "Wake up, Neo...",
+        "The Matrix has you...",
+        "Follow the white rabbit."
+      );
+    } else if (command === "exit") {
+      newOutput.push("Terminal fermé. Au revoir.");
+    } else if (command === "") {
+      // Do nothing
     } else {
-      newOutput.push(`Commande inconnue: ${trimmedCmd}`);
+      newOutput.push(`Commande inconnue: ${command}`);
       newOutput.push("Tapez 'help' pour la liste des commandes.");
     }
 
     setOutput(newOutput);
   };
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -126,15 +189,35 @@ const Terminal = () => {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                className="flex-1 bg-cyber-darker/50 border-2 border-primary/30 rounded px-3 py-2 text-primary font-mono focus:outline-none focus:border-primary transition-colors"
-                placeholder="Entrez une commande..."
+                disabled={isProcessing}
+                className="flex-1 bg-cyber-darker/50 border-2 border-primary/30 rounded px-3 py-2 text-primary font-mono focus:outline-none focus:border-primary transition-colors disabled:opacity-50"
+                placeholder={isProcessing ? "Traitement..." : "Entrez une commande..."}
                 autoFocus
               />
               <Keyboard className="h-5 w-5 text-primary/50" />
             </form>
 
-            <div className="text-xs text-muted-foreground font-mono">
-              Tapez 'help' pour voir les commandes disponibles
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-muted-foreground font-mono">
+                Tapez 'help' pour voir les commandes disponibles
+              </span>
+              <div className="flex items-center gap-1">
+                <Palette className="h-3 w-3 text-primary" />
+                <span className="text-primary font-mono">{theme}</span>
+              </div>
+            </div>
+
+            <div className="flex gap-2">
+              {['blue', 'rose', 'green', 'orange', 'purple'].map((t) => (
+                <CyberButton
+                  key={t}
+                  variant={theme === t ? 'primary' : 'ghost'}
+                  onClick={() => setTheme(t as any)}
+                  className="flex-1 text-xs"
+                >
+                  {t}
+                </CyberButton>
+              ))}
             </div>
           </CyberCard>
         </motion.div>

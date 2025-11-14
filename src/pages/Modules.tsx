@@ -1,31 +1,38 @@
 import { motion } from "framer-motion";
-import { CyberCard } from "@/components/CyberCard";
-import { Music, FileText, MessageSquare, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { CyberCard } from "@/components/CyberCard";
+import { Music, FileText, MessageSquare, Terminal, Gamepad2, MessagesSquare, Calendar as CalendarIcon, BookOpen } from "lucide-react";
 
 const Modules = () => {
   const navigate = useNavigate();
 
-  const handleMusicClick = () => {
-    window.open("https://music.youtube.com", "_blank");
-  };
-
   const modules = [
-    { icon: MessageSquare, title: "Chat IA", color: "text-primary", path: "/chat", action: null },
-    { icon: Music, title: "Musique", color: "text-secondary", path: null, action: handleMusicClick },
-    { icon: FileText, title: "Notes", color: "text-accent", path: "/notes", action: null },
-    { icon: Settings, title: "Outils", color: "text-primary", path: "/settings", action: null },
+    { icon: Music, title: "Musique", description: "Streaming intergalactique", onClick: () => window.open("https://music.youtube.com", "_blank") },
+    { icon: MessageSquare, title: "Chat IA", description: "Assistant neuronal", onClick: () => navigate("/chat") },
+    { icon: FileText, title: "Notes", description: "Mémoire quantique", onClick: () => navigate("/notes") },
+    { icon: Terminal, title: "Terminal", description: "Console système", onClick: () => navigate("/terminal") },
+    { icon: Gamepad2, title: "Mini-Jeux", description: "Arcade néon", onClick: () => navigate("/games") },
+    { icon: MessagesSquare, title: "CyberTalk", description: "Chat sécurisé", onClick: () => navigate("/cybertalk") },
+    { icon: CalendarIcon, title: "Calendrier", description: "Navigation temporelle", onClick: () => navigate("/calendar") },
+    { icon: BookOpen, title: "Neopedia", description: "Encyclopédie du futur", onClick: () => navigate("/neopedia") },
   ];
 
   return (
     <div className="min-h-screen pb-20 pt-8 px-4 grid-bg">
-      <div className="max-w-lg mx-auto space-y-6">
-        <h1 className="text-4xl font-orbitron font-black text-center text-primary text-glow">
-          MODULES
-        </h1>
+      <div className="max-w-4xl mx-auto space-y-6">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center space-y-2"
+        >
+          <h1 className="text-4xl font-orbitron font-black text-primary text-glow">
+            MODULES SYSTÈME
+          </h1>
+          <p className="text-muted-foreground">Centre de contrôle neuronal</p>
+        </motion.div>
 
-        <div className="grid grid-cols-2 gap-4">
-          {modules.map(({ icon: Icon, title, color, path, action }, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {modules.map(({ icon: Icon, title, description, onClick }, index) => (
             <motion.div
               key={title}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -33,17 +40,14 @@ const Modules = () => {
               transition={{ delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                if (action) {
-                  action();
-                } else if (path) {
-                  navigate(path);
-                }
-              }}
+              onClick={onClick}
             >
-              <CyberCard className="p-6 text-center space-y-4 cursor-pointer hover:border-primary transition-all duration-300">
-                <Icon className={`h-12 w-12 mx-auto ${color}`} />
-                <h3 className="font-orbitron font-bold">{title}</h3>
+              <CyberCard className="p-6 text-center space-y-3 cursor-pointer hover:border-primary transition-all duration-300" glow>
+                <Icon className="h-10 w-10 mx-auto text-primary" />
+                <div>
+                  <h3 className="font-orbitron font-bold text-foreground">{title}</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{description}</p>
+                </div>
               </CyberCard>
             </motion.div>
           ))}
