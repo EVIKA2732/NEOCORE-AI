@@ -46,8 +46,6 @@ Synchronise your soul with the matrix.
 Welcome to NeoCore AI: the post-human era begins now.
 
 
-                                              Update 
-
                                               🔸 Added/improved features
 
 *I then enhanced and expanded NEOCORE AI with a set of major improvements*
@@ -144,17 +142,7 @@ Short articles in the style of a cyberpunk encyclopaedia
 
 With these updates, NEOCORE AI has evolved from a futuristic prototype into a true multi-purpose cyberpunk platform, incorporating:
 
-visual customisation
-
-lively animations
-
-smart terminal
-
-messaging
-
-mini-games
-
-futuristic calendar & map
+visual customisation | lively animations | smart terminal | messaging | mini-games | futuristic calendar & map
 
 an encyclopaedia of the future
 
