@@ -74,7 +74,7 @@ Synchronise your soul with the matrix.
 Welcome to NeoCore AI: the post-human era begins now.
 
 ____________________________________________________________________________________________________________________________
-              🔸 *First update*                               🔸 *Added/improved features*
+              🔸 First update                               🔸 Added/improved features
 
 *I then enhanced and expanded NEOCORE AI with a set of major improvements*
 
