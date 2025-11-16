@@ -1,3 +1,29 @@
+
+🚀 **NEOCORE AI** – *Intergalactic Update* 🌌
+
+Version 2.0 – Future activated
+
+✨ Key new features:
+
+🐍 Improved games: Futuristic Snake and Ghost Evasion fixed and smooth. New games: Space Chess ♟️ and Intergalactic Slither.io 🌠.
+
+💻 Advanced terminal: new commands, user profiles and neural network status.
+
+🕰️ Planetary clocks: time simulator on 5 planets and intergalactic calendar.
+
+🎵 Internal music streaming and YouTube Music integration.
+
+📚 Neopedia AI: enriched and interactive encyclopaedia of the future.
+
+🗺️ Map of the future: interactive exploration of districts, countries and municipalities from 2025 to 2100.
+
+💬 Futuristic chat: chat with other users, AI or aliens 👽, and decode messages from the future.
+
+🕹️ Time travel and immersive interface: interface that evolves according to the era, with videos and photos from the future.
+
+NEOCORE AI is now a complete experience: games, exploration, chat and futuristic technologies directly in your cyberpunk interface ⚡.
+
+___________________________________________________________________________
 🚀 **NeoCore AI** — The future has already begun!
 
 Join me on board the NeoCore vessel, a project born from a code, an idea and a vision: to merge human and artificial intelligence to create the core of the future. Here, the mind becomes an interface. Emotions become algorithms. And the algorithms become emotions.
@@ -50,100 +76,22 @@ Welcome to NeoCore AI: the post-human era begins now.
 
 *I then enhanced and expanded NEOCORE AI with a set of major improvements*
 
-✨ New theme options
 
-Added a modern visual customisation system:
 
-🔵 Blue theme
+✨ NEOCORE AI – Mise à jour Cyberpunk
 
-🌸 Pink theme
+🎨 Thèmes personnalisables : bleu 🔵, rose 🌸, vert 🟢, orange 🟧, violet 💜
 
-🟢 Green theme
+🌌 Animation vivante : fond animé donnant vie à l’IA avec effets holographiques et pulsations lumineuses
 
-🟧 Orange theme
+💻 Terminal futuriste : prédictions, scanlines et feedback visuel dynamique
 
-💜 Purple Theme
+💬 Chat cyberpunk : discussion sécurisée avec n’importe qui via lien, style Matrix/Signal 👽
 
-*Users can now choose the interface's atmosphere.*
+🕹️ Mini-jeux intégrés : Snake Cyberpunk Edition 🐍 et Escape Ghost Protocol 👻
 
-✨ Lively background animation
+🗺️ Calendrier, cartes et horloges : immersion terrestre et intergalactique
 
-Added an animated background simulating an awakening AI:
+📚 NeoPedia AI : mini-wiki du futur avec technologies avancées et vaisseaux interstellaires
 
-Holographic effects
-
-Light pulses
-
-Digital data movement
-→ Gives the impression that NEOCORE AI is breathing and observing.
-
-✨ Enhanced futuristic terminal
-
-The terminal becomes a true cyberpunk tool:
-
-Future prediction mode (stylish "AI vision" responses)
-
-Enhanced appearance (scanline effect / CRT effect)
-
-More dynamic visual feedback
-→ The terminal is no longer decorative: it becomes a real feature.
-
-✨ Cyberpunk messaging system
-
-Addition of a chat module inspired by Signal/Matrix:
-
-Ability to chat with anyone who has the link
-
-"Futuristic encrypted communication" style interface
-
-Holographic appearance
-→ Opening up secure and stylish communication.
-
-✨ Integrated mini-games
-
-Addition of two retro-futuristic games:
-
-🐍 Snake Cyberpunk Edition
-
-👻 Escape Ghost Protocol
-
-2D game where you have to avoid ghosts chasing you
-
-→ Transforms the app into an interactive space, not just a dashboard.
-
-✨ Calendar + Map + Clocks
-
-Addition of a "time & space" module with:
-
-A cyberpunk calendar
-
-Futuristic mapping
-
-Timetables:
-
-🌍 on Earth
-
-🪐 in other systems (fictional intergalactic timetables)
-
-→ Perfect for enhancing the "future/star travel" immersion.
-
-✨ NeoPedia AI
-
-Creation of an integrated futuristic mini-wiki:
-
-Explanation of advanced technologies
-
-Information on interstellar ships
-
-Short articles in the style of a cyberpunk encyclopaedia
-→ A true "codex of the future" integrated into NEOCORE AI.
-
-🟣 Final summary (to be included in your logbook)
-
-With these updates, NEOCORE AI has evolved from a futuristic prototype into a true multi-purpose cyberpunk platform, incorporating:
-
-visual customisation | lively animations | smart terminal | messaging | mini-games | futuristic calendar & map
-
-an encyclopaedia of the future
-
-The project is becoming a complete immersive experience, combining interface, tools, entertainment and narrative universe.
+➡️ NEOCORE AI devient une plateforme cyberpunk complète : personnalisation, animations, jeux, chat et exploration du futur.
