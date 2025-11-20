@@ -1,39 +1,39 @@
 
-🚀 NEOCORE AI – Version [2.8.6] – Mise à jour majeure
+🚀 NEOCORE AI – Version [2.8.6] – Major update
 
-✨ Sécurité & légalité renforcées
+✨ Enhanced security and legality
 
-L’IA ne donne plus jamais de conseils médicaux ou juridiques.
+The AI no longer provides medical or legal advice.
 
-Toutes les professions réglementées sont désormais strictement exclues de la génération de réponses.
+All regulated professions are now strictly excluded from generating responses.
 
-Chaque réponse affiche un message automatique :
+Each response displays an automatic message:
 
-⚠️ Contenu spéculatif, éducatif et non destiné à un usage médical ou juridique.
+⚠️ Speculative, educational content not intended for medical or legal use.
 
-🔘 Nouveau bouton RGTD
+🔘 New GDPR button
 
-Conformité totale au droit européen.
+Full compliance with European law.
 
-Permet à chaque utilisateur de gérer ses données facilement.
+Allows each user to manage their data easily.
 
-♟️ Jeu d’échecs amélioré
+♟️ Improved chess game
 
-Respect scrupuleux des règles classiques du jeu d’échecs.
+Strict adherence to the classic rules of chess.
 
-Plus possible de déplacer les pièces n’importe comment.
+It is no longer possible to move pieces randomly.
 
-🗑️ Suppression rapide des données
+🗑️ Quick data deletion
 
-Un bouton dédié permet de supprimer instantanément toutes vos données personnelles stockées.
+A dedicated button allows you to instantly delete all your stored personal data.
 
-💡 Améliorations générales
+💡 General improvements
 
-Interface plus fluide et intuitive.
+Smoother and more intuitive interface.
 
-Corrections mineures sur les mini-jeux et les modules interactifs.
+Minor corrections to mini-games and interactive modules.
 
-💜 Résumé : NEOCORE AI devient encore plus sûr, responsable et respectueux des lois, tout en restant un hub futuriste, interactif et ludique.
+💜 Summary: NEOCORE AI is becoming even more secure, responsible and compliant with the law, while remaining a futuristic, interactive and fun hub.
 
 ______________________________________________________________________________________________________________________________________________
 🔸🔸*Second update*
